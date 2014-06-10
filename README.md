@@ -2,3 +2,4 @@ Python PostgreSQL Sample [![Build Status](https://apibeta.shippable.com/projects
 ======================
 
 Tests basic SQL commands using the psycopg2 driver for Python.
+jun 10
