@@ -11,7 +11,8 @@ install:
 # Create a DB as part of before script to use it
 
 before_script:
-  - psql -c "create database IF NOT EXISTS test;" -U postgres
+  - psql -c 'drop database if exists test;' -U postgres -w
+  - psql -c "create database test;" -U postgres
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
 
@@ -21,4 +22,5 @@ script:
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch test.py
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
+
 #cache: true 
