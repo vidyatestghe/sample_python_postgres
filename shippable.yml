@@ -26,3 +26,5 @@ script:
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
 
 #cache: true 
+after_script:
+  - cp README.md ./shippable
