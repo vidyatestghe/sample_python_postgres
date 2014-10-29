@@ -29,3 +29,9 @@ script:
 after_script:
   - cp README.md ./shippable
 archive: true
+notifications:
+     email:
+         recipients:
+             - buildsampletest@gmail.com
+         on_success: always
+         on_failure: always
