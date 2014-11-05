@@ -8,7 +8,7 @@ class Test(unittest.TestCase):
         pg = Postgres()
         pg.populate()
         count = pg.read()
-        self.failIf(count != 4)
+        self.failIf(count != 5)
         pg.disconnect()
 
 

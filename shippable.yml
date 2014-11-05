@@ -16,19 +16,20 @@ before_script:
   - psql -c "create database test;" -U postgres
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
-
-
-
+  - echo $key1 and $key2
 
 script:
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch test.py
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
 
+env:
+  - secure: e3IF2H+i8bq+GzgbMoR1WY5WAYqOYviZWWUQobtNAVW0Lq1N1EJURJ98L34vf7Yrsx9YBuaOGAcRFx7MDNyrNtmPkXtZVkODSBzRIwwwCO3D3wrSIig6QxvRGRmDMIIMFFTf92SRcu0WfwD+qe9aQSH5hDM5uqOQX7tsD+xScaiGF5ShvhrBjHZNOq7LlLwU1LpmJCj7RlwzCVGSqdUicAhhh5xBK+QmJkC6BQWJq9OZsNchwQKDmacDoyZbqrpSmclbkNuSG6x6EE0HZ/WKYbadCjxRMFtk0wVsQsfkMh42/jNMalkLDpMBfa+/3C6nwanXm0yfqdMdAi+IGv9xUA==
 #cache: true 
 after_script:
   - cp README.md ./shippable
 archive: true
+
 notifications:
      email:
          recipients:
