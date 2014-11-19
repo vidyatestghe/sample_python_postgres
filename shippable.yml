@@ -9,8 +9,6 @@ install:
 
 # Postgres binds to 127.0.0.1 by default and is started on boot. Default username is "postgres" with no password
 # Create a DB as part of before script to use it
-
-
 before_script:
   - psql -c 'drop database if exists test;' -U postgres -w
   - psql -c "create database test;" -U postgres
