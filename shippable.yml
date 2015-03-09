@@ -3,6 +3,7 @@ language: python
 python:
    - 2.7
    - 2.6
+ 
   
 install:
   - pip install -r requirements.txt
@@ -26,10 +27,13 @@ script:
 env:
  global:
   - FOO=fooval SHIPPABLE_POSTGRES_CMD='sudo -u postgres $SHIPPABLE_POSTGRES_BINARY -c config_file=/etc/postgresql/$SHIPPABLE_POSTGRES_VERSION/main/postgresql.conf -c fsync=off'
+  - secure: Frr0m4gvASImyseMvGe58LHWsh3DbEBz2NsySKSHcHGnIXps8xg6xjGXRKevxDsUrNIOywV9JJGBMaqxhWSJGRP7I0XWQ1+odHKMNMCp6bLSo+lCveairnndRgnievx7XMnah8oomHuMUoAehq201sQ4QUKJCBBFmpmeEt7o8F5WqyXNLdSqVbB4dJ8yMcrjjSOtXSYbVq90nkBwC2GqriSr9NKbGvcy/QI0zYSpllT7Oulj0tWjOIo+raUazWr/aNfyarAjrf3lTBJdkFxXzMYCS5ubLVdOIZUvWVotlv1PiH/igW9kEblzzNymJaRNkLYJsOn6NOIHAFKVsbGKxA==
  # - secure: e3IF2H+i8bq+GzgbMoR1WY5WAYqOYviZWWUQobtNAVW0Lq1N1EJURJ98L34vf7Yrsx9YBuaOGAcRFx7MDNyrNtmPkXtZVkODSBzRIwwwCO3D3wrSIig6QxvRGRmDMIIMFFTf92SRcu0WfwD+qe9aQSH5hDM5uqOQX7tsD+xScaiGF5ShvhrBjHZNOq7LlLwU1LpmJCj7RlwzCVGSqdUicAhhh5xBK+QmJkC6BQWJq9OZsNchwQKDmacDoyZbqrpSmclbkNuSG6x6EE0HZ/WKYbadCjxRMFtk0wVsQsfkMh42/jNMalkLDpMBfa+/3C6nwanXm0yfqdMdAi+IGv9xUA==
 #cache: true 
 after_script:
   - cp README.md ./shippable
+  - echo $beta
+  
 archive: true
 
 notifications:
