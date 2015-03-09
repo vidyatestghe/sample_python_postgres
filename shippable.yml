@@ -41,6 +41,6 @@ notifications:
          recipients:
              - buildsampletest@gmail.com
          on_success: always
-         on_failure: always
+         on_failure: change
 
 #build_image: shippable/minv2:beta
