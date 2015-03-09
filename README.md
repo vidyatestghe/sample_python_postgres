@@ -1,4 +1,5 @@
-Python PostgreSQL Sample [![Build 
+Python PostgreSQL Sample 
+[![Build 
 ======================
 
 Tests basic SQL commands using the psycopg2 driver for Python.
