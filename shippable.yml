@@ -1,5 +1,9 @@
 language: python
 build_image: shippableimages/ubuntu1404_python
+before_install:
+ - chmod -R 777 .
+ - ls -al .
+
 python: "3.4"
 
 install:
