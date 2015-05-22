@@ -17,9 +17,6 @@ before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
 
-
-
-
 script:
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch test.py
@@ -33,5 +30,5 @@ notifications:
      email:
          recipients:
              - buildsampletest@gmail.com
-         on_success: always
+         on_success: success
          on_failure: always
